@@ -6,6 +6,7 @@ require("dotenv").config();
 const express = require('express');
 const app = express();
 
+app.use(express.json());
 
 let books = [
     {
@@ -63,4 +64,4 @@ app.delete('/books/:id', (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on port http://localhost:${port}...`));
+app.listen(port, () => console.log(`Listening on port http://localhost:${port}`));
